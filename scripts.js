@@ -12,9 +12,9 @@ const cartItemsElement = document.getElementById('cart-items');
 const cartTotalElement = document.getElementById('cart-total');
 const cartCounterElement = document.getElementById('cart-counter');
 
-// Sepet panelini göster/gizle
 function toggleCart() {
-    cartElement.classList.toggle('hidden');
+    const cartElement = document.getElementById('cart');
+    cartElement.classList.toggle('hidden'); 
 }
 
 // Sepet ve Sayaç Güncelleyen Ana Fonksiyon
@@ -101,5 +101,6 @@ function checkout() {
     updateCart();
     toggleCart(); // Ödeme sonrası sepeti kapat
 }
+
 
 document.addEventListener('DOMContentLoaded', updateCart);
