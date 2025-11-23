@@ -208,59 +208,28 @@ footer {
 
 }
 /* 7. MOBİL UYUMLULUK (RESPONSIVE DESIGN) */
-
 @media (max-width: 768px) {
-    /* Ana Düzen (Main) */
-    .container {
-        padding: 0 10px; /* Kenar boşluklarını azalt */
-    }
-
-    /* Header ve Navigasyon */
-    header .container {
-        flex-direction: column; /* Küçük ekranda alt alta sırala */
-        align-items: center;
-        padding-bottom: 10px;
-    }
-
-    nav {
-        margin-top: 10px;
-        gap: 15px; /* Navigasyon öğeleri arasındaki boşluğu ayarla */
-    }
-    
-    /* Ürünler Bölümü (Grid Düzeni) */
-    #products {
-        /* Tek sütunlu düzen. Tüm ürünler alt alta sıralanır. */
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-
-    /* Ürün Kartları */
-    .product {
-        padding: 15px;
-    }
-    
-    .price {
-        font-size: 1.2rem; /* Fiyat yazı tipini küçült */
-    }
+    /* ... (Diğer kurallarınız) ... */
 
     /* Sepet Alanı (Sidebar'dan Full Ekran Moda Geçiş) */
     #cart {
-        /* Sepeti, yan panel yerine tam ekran genişliğinde göster */
         width: 100%;
         height: auto;
-        position: static; /* Sabit konumdan statik konuma geçir */
+        position: static; /* Statik yapıldı */
         box-shadow: none;
-        transform: translateX(0) !important; /* Gizleme/açma animasyonunu devre dışı bırak */
         margin-top: 20px;
+        /* Mobil görünümde başlangıçta gizli olmalı, JS açmalı */
+        display: none; 
     }
 
     #cart.hidden {
-        /* Sepet görünümünü yine de gizleyebilmek için */
+        /* JS tarafından .hidden sınıfı eklendiğinde gizlenmeyecek,
+           çünkü varsayılanı zaten display: none */
         display: none;
     }
-
-    /* Sepet ikonu container'ı genişlet */
-    .cart-icon-container {
-        font-size: 1.3rem; 
+    
+    /* Sepeti açan JS işlevi devreye girdiğinde */
+    #cart:not(.hidden) {
+        display: block; /* Veya display: flex; kullanılabilir */
     }
 }
