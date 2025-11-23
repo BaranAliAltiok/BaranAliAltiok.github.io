@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticaret Simülasyonu Ödev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>PC DUNYASI</h1>
+            <nav>
+                <a href="#products">Ürünler</a>
+                <div class="cart-icon-container" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-counter" class="badge">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="products">            
+            <div class="product" data-id="1" data-name="Wraith_W75_mavi-klavye" data-price="3999">
+                <img src="Wraith_W75_mavi.png" alt="Wraith_W75_mavi">
+                <h3>Wraith W75 V2 Klavye (Manyetik Switch / HE)</h3>
+                <p class="price">3.999 TL</p>
+                <p class="description">Wraith W75 V2 Klavye (Manyetik Switch / HE)</p>
+                <button onclick="addToCart(1)"><i class="fas fa-cart-plus"></i> Sepete Ekle</button>
+            </div>
+
+            <div class="product" data-id="2" data-name="Kablosuz Kulaklık" data-price="3999">
+                <img src="hyperx-cloud-ii-core-wireless-6y2g8aa-mikrofonlu-kulak-ustu-oyuncu-kulakligi.png" alt="Hyperx Cloud II Core Wireless">
+                <h3>Hyperx Cloud II Core Kablosuz Kulak Üstü Oyun Kulaklığı</h3>
+                <p class="price">3.999 TL</p>
+                <p class="description">Gürültü önleyici ve uzun ömürlü pil süresi.</p>
+                <button onclick="addToCart(2)"><i class="fas fa-cart-plus"></i> Sepete Ekle</button>
+            </div>
+            
+            <div class="product" data-id="3" data-name="Logitech G G502 HERO" data-price="1650">
+                <img src="logitech-g502-hero-oyuncu-mouse.png" alt="Logitech G502 HERO Mouse">
+                <h3>Logitech G G502 HERO</h3>
+                <p class="price">1650 TL</p>
+                <p class="description">Logitech G G502 HERO LIGHTSYNC 25.600 DPI Yüksek Performanslı Kablolu Oyuncu Mouse - Siyah</p>
+                <button onclick="addToCart(3)"><i class="fas fa-cart-plus"></i> Sepete Ekle</button>
+            </div>
+
+        </section>
+
+        <section id="cart" class="hidden">
+            <h2>Sepetim</h2>
+            <ul id="cart-items">
+            </ul>
+            <p class="cart-summary">Sepet Toplamı: <span id="cart-total">0</span> TL</p>
+            <button class="checkout-btn" onclick="checkout()">Ödeme Yap</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PC DUNYASI E-Ticaret Simülasyonu Ödev</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
